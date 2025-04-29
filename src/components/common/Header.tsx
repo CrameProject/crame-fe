@@ -2,7 +2,7 @@ import LogoIcon from "@/assets/icons/Logo.svg?react";
 
 const Header = () => {
   return (
-    <header className="w-full min-w-[768px] py-3">
+    <header className="w-full min-w-[768px] border-b border-gray-200 py-3">
       <div className="mx-auto flex max-w-screen-xl items-center justify-between px-12">
         <div className="flex items-center gap-8">
           <div className="text-xl font-bold text-blue-600">
