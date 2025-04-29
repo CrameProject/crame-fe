@@ -25,11 +25,11 @@ const Header = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          <button className="rounded border px-6 py-2 text-blue-500 transition hover:bg-blue-50">
-            로그인
-          </button>
-          <button className="rounded bg-blue-500 px-6 py-2 text-white transition hover:bg-blue-600">
+          <button className="text-gray-1500 rounded border border-gray-200 px-6 py-2 transition hover:bg-gray-100">
             회원가입
+          </button>
+          <button className="rounded bg-[#F4B224] px-6 py-2 text-white transition hover:bg-[#d9991b]">
+            로그인
           </button>
         </div>
       </div>
