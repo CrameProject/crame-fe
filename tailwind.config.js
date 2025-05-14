@@ -1,69 +1,108 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+// tailwind.config.js
+module.exports = {
+  content: ["./src/**/*.{js,ts,jsx,tsx}"], // 프로젝트에 맞게 경로 수정
   theme: {
     extend: {
       fontFamily: {
-        SUIT: ['SUIT', 'sans-serif'],
+        sans: ['"SUIT"', "sans-serif"],
       },
       colors: {
-        /** Primary Colors **/
-        primary: '#3D5AFE',
-        'on-primary': '#FFFFFF',
-        'primary-container': '#E8F0FF',
-        'on-primary-container': '#3D5AFE',
-
-        /** Secondary Colors **/
-        secondary: '#5C6BC0',
-        'on-secondary': '#FFFFFF',
-        'secondary-container': '#DDE7FF',
-        'on-secondary-container': '#2C3A87',
-
-        /** Tertiary Colors **/
-        tertiary: '#52A87F',
-        'on-tertiary': '#FFFFFF',
-        'tertiary-container': '#FBE47A',
-        'on-tertiary-container': '#141414',
-
-        /** Error Colors **/
-        error: '#D8433B',
-        'on-error': '#FFFFFF',
-        'error-container': '#FDECEA',
-        'on-error-container': '#D8433B',
+        gold: {
+          100: "#FDF1D6",
+          200: "#F9D27E",
+          300: "#F2B124",
+          400: "#C18C18",
+          500: "#916915",
+          600: "#725411",
+        },
+        neutral: {
+          100: "#F4F3F1",
+          200: "#D9D6D3",
+          300: "#BFB8B6",
+          400: "#A5A09A",
+          500: "#8D8881",
+          600: "#6A6762",
+          700: "#4F4D4A",
+          800: "#343332",
+        },
+        bg: {
+          default: "#FFFFFF",
+          1: "#FFFDFC",
+          2: "#FCFAF6",
+        },
+        system: {
+          positive: "#EE0000", // 수익금
+          negative: "#2D55F4", // 손실금
+          highlight: "#F2B124", // 강조
+          error: "#EE0000", // 삭제 및 경고
+          success: "#5BC085", // 성공
+        },
+        text: {
+          disabled: "#A5A09A",
+          sub: "#6A6762",
+          default: "#343332",
+        },
       },
-      letterSpacing: {
-        tightest: '-0.02em',
+      fontSize: {
+        // Title
+        "T1-B": [
+          "30px",
+          { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" },
+        ],
+        "T2-SB": [
+          "24px",
+          { lineHeight: "35px", letterSpacing: "-0.02em", fontWeight: "600" },
+        ],
+        "T2-B": [
+          "24px",
+          { lineHeight: "35px", letterSpacing: "-0.02em", fontWeight: "700" },
+        ],
+        "T3-SB": [
+          "20px",
+          { lineHeight: "32px", letterSpacing: "-0.02em", fontWeight: "600" },
+        ],
+        "T3-B": [
+          "20px",
+          { lineHeight: "32px", letterSpacing: "-0.02em", fontWeight: "700" },
+        ],
+
+        // Body
+        "B1-M": [
+          "18px",
+          { lineHeight: "28px", letterSpacing: "-0.02em", fontWeight: "500" },
+        ],
+        "B1-B": [
+          "18px",
+          { lineHeight: "28px", letterSpacing: "-0.02em", fontWeight: "700" },
+        ],
+        "B2-M": [
+          "14px",
+          { lineHeight: "20px", letterSpacing: "-0.02em", fontWeight: "500" },
+        ],
+        "B2-B": [
+          "14px",
+          { lineHeight: "20px", letterSpacing: "-0.02em", fontWeight: "700" },
+        ],
+
+        // Caption
+        "C1-M": [
+          "12px",
+          { lineHeight: "15px", letterSpacing: "-0.02em", fontWeight: "500" },
+        ],
+        "C1-B": [
+          "12px",
+          { lineHeight: "15px", letterSpacing: "-0.02em", fontWeight: "700" },
+        ],
+        "C2-M": [
+          "10px",
+          { lineHeight: "15px", letterSpacing: "-0.02em", fontWeight: "500" },
+        ],
+        "C2-B": [
+          "10px",
+          { lineHeight: "15px", letterSpacing: "-0.02em", fontWeight: "700" },
+        ],
       },
     },
   },
-  plugins: [
-    ({ addUtilities }) => {
-      addUtilities({
-        '.font-title1': {
-          '@apply font-SUIT font-semibold text-[28px] leading-[40px] tracking-tightest': {},
-        },
-        '.font-title2': {
-          '@apply font-SUIT font-semibold text-[24px] leading-[35px] tracking-tightest': {},
-        },
-        '.font-title3': {
-          '@apply font-SUIT font-medium text-[20px] leading-[28px] tracking-tightest': {},
-        },
-        '.font-body1-m': {
-          '@apply font-SUIT font-medium text-[18px] leading-[25px] tracking-tightest': {},
-        },
-        '.font-body1-sb': {
-          '@apply font-SUIT font-semibold text-[18px] leading-[25px] tracking-tightest': {},
-        },
-        '.font-body2-m': {
-          '@apply font-SUIT font-medium text-[14px] leading-[20px] tracking-tightest': {},
-        },
-        '.font-body2-sb': {
-          '@apply font-SUIT font-semibold text-[14px] leading-[20px] tracking-tightest': {},
-        },
-        '.font-caption-m': {
-          '@apply font-SUIT font-medium text-[12px] leading-[15px] tracking-tightest': {},
-        },
-      });
-    },
-  ],
+  plugins: [],
 };
