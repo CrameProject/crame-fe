@@ -12,7 +12,7 @@ const InfoButton = () => {
     <div className="flex justify-center">
       <Button
         variant="default"
-        className="h-[48px] w-[262px] rounded-md bg-gold-300 px-8 py-2 text-B1-M text-white hover:bg-gold-400"
+        className="h-[48px] w-[262px] rounded-[10px] bg-[#f2b94c] px-8 py-2 text-white hover:bg-[#e0a93a]"
         onClick={handleClick}
       >
         투자 유의사항 및 API 안내
