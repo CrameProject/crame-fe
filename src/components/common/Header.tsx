@@ -11,16 +11,16 @@ const Header = () => {
           </div>
 
           <nav className="flex items-center gap-6 px-16 font-medium text-gray-700">
-            <a href="#" className="transition hover:text-blue-500">
+            <a href="/" className="transition hover:text-gold-300">
               차트
             </a>
-            <a href="#" className="transition hover:text-blue-500">
+            <a href="/" className="transition hover:text-gold-300">
               지표
             </a>
-            <a href="#" className="transition hover:text-blue-500">
-              퀀트
+            <a href="/quant" className="transition hover:text-gold-300">
+            퀀트
             </a>
-            <a href="#" className="transition hover:text-blue-500">
+            <a href="/" className="transition hover:text-gold-300">
               서비스
             </a>
           </nav>
