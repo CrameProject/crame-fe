@@ -41,7 +41,7 @@ const StrategyCard = ({
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="mb-6">
-        <div className="mb-1 flex items-baseline">
+        <div className="mb-2 flex items-baseline">
           <h3 className="text-T2-SB text-text-default">{title}</h3>
           {subtitle && <span className="ml-2 text-B2-M text-gold-300">{subtitle}</span>}
         </div>
