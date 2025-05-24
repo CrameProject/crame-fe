@@ -5,10 +5,10 @@ export type Strategy = {
 };
 
 export type Metrics = {
-  승률: number;
-  연간수익률: number;
-  변동성: number;
-  최대낙폭: number;
+  winRate: number;
+  annualReturn: number;
+  volatility: number;
+  maxDrawdown: number;
 };
 
 export type TradingSystem = {

@@ -8,10 +8,10 @@ export const tradingSystems: TradingSystem[] = [
     price: '₩100,000',
     priceInfo: '안전보증 ₩100,000 / 월마다',
     metrics: {
-      승률: 92,
-      연간수익률: 45,
-      변동성: 12,
-      최대낙폭: 15,
+      winRate: 92,
+      annualReturn: 45,
+      volatility: 12,
+      maxDrawdown: 15,
     },
     features: [
       '딥러닝 기반 실시간 시장 분석',
@@ -41,10 +41,10 @@ export const tradingSystems: TradingSystem[] = [
     price: '₩0',
     priceInfo: '안전보증 ₩100,000 / 월마다',
     metrics: {
-      승률: 78,
-      연간수익률: 28,
-      변동성: 18,
-      최대낙폭: 22,
+      winRate: 78,
+      annualReturn: 28,
+      volatility: 18,
+      maxDrawdown: 22,
     },
     features: [
       '기술적 지표 기반 분석',

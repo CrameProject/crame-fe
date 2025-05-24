@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Metric from "./Metric";
 import { useState } from "react";
+import { Metrics } from "../data/types";
 
 export type StrategyCardProps = {
   title: string;
@@ -8,12 +9,7 @@ export type StrategyCardProps = {
   price?: string;
   priceUnit?: string;
   priceInfo?: string;
-  metrics: {
-    승률: number;
-    연간수익률: number;
-    변동성: number;
-    최대낙폭: number;
-  };
+  metrics: Metrics;
   features: string[];
   strategies?: {
     name: string;
@@ -75,10 +71,10 @@ const StrategyCard = ({
       </div>
 
       <div className="mb-6 grid grid-cols-4 gap-2">
-        <Metric label="승률" value={metrics.승률} />
-        <Metric label="연간 수익률" value={metrics.연간수익률} />
-        <Metric label="변동성" value={metrics.변동성} />
-        <Metric label="최대 낙폭" value={metrics.최대낙폭} />
+        <Metric type="winRate" value={metrics.winRate} />
+        <Metric type="annualReturn" value={metrics.annualReturn} />
+        <Metric type="volatility" value={metrics.volatility} />
+        <Metric type="maxDrawdown" value={metrics.maxDrawdown} />
       </div>
 
       <div className="mb-6">
