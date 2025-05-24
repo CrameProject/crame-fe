@@ -35,25 +35,28 @@ const StrategyCard = ({
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div 
-      className={`flex flex-col rounded-lg bg-bg-1 border p-6 transition-all duration-300
-        ${isHovered ? 'border-gold-300' : 'border-neutral-300'}`}
+    <div
+      className={`flex flex-col rounded-lg border bg-bg-1 p-6 transition-all duration-300 ${isHovered ? "border-gold-300" : "border-neutral-300"}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="mb-6">
-        <div className="mb-2 flex items-baseline">
+        <div className="mb-1 flex items-baseline">
           <h3 className="text-T2-SB text-text-default">{title}</h3>
           {subtitle && <span className="ml-2 text-B2-M text-gold-300">{subtitle}</span>}
         </div>
-        <p className="text-B2-M text-text-sub">간단설명간단설 명간단설명간 간단설 명 간단설명간간 설명 간 담설</p>
-        <br/>
+        <p className="text-B2-M text-text-sub">
+          간단설명간단설 명간단설명간 간단설 명 간단설명간간 설명 간 담설
+        </p>
+        <br />
       </div>
 
       {price && (
         <div className="mb-4">
           <div className="flex items-baseline">
-            <span className="text-B1-M text-text-default">{price} / {priceUnit}</span>
+            <span className="text-B1-M text-text-default">
+              {price} / {priceUnit}
+            </span>
           </div>
           {priceInfo && <div className="text-C1-M text-text-sub">{priceInfo}</div>}
         </div>
@@ -62,7 +65,7 @@ const StrategyCard = ({
       <div className="mb-4">
         {buttonText && (
           <Button
-            className={`w-full h-[60px] rounded-full bg-gold-300 text-white text-center text-B1-M font-bold hover:bg-gold-400 transition-colors ${isDisabled ? 'opacity-70 cursor-not-allowed' : ''}`}
+            className={`h-[60px] w-full rounded-full bg-gold-300 text-center text-B1-M font-bold text-white transition-colors hover:bg-gold-400 ${isDisabled ? "cursor-not-allowed opacity-70" : ""}`}
             disabled={isDisabled}
           >
             {buttonText}
@@ -111,4 +114,4 @@ const StrategyCard = ({
   );
 };
 
-export default StrategyCard; 
+export default StrategyCard;
