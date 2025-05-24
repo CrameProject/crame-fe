@@ -1,9 +1,9 @@
 import { useState } from "react";
-import ApiKeyHeader from "./components/ApiKeyHeader";
-import ApiKeyTable from "./components/ApiKeyTable";
-import ApiKeyForm from "./components/ApiKeyForm";
-import TradeButton from "./components/TradeButton";
-import { ApiKeyData } from "./types";
+import ApiKeyHeader from "./components/ApiKeyHeader.tsx";
+import ApiKeyTable from "./components/ApiKeyTable.tsx";
+import ApiKeyForm from "./components/ApiKeyForm.tsx";
+import TradeButton from "./components/TradeButton.tsx";
+import { ApiKeyData } from "./types.ts";
 
 const ApiKeyPage = () => {
   const [apiKeys, setApiKeys] = useState<ApiKeyData[]>([]);

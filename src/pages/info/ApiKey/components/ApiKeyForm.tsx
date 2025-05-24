@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@components/ui/button.tsx";
 import { useState } from "react";
 
 interface ApiKeyFormProps {
@@ -50,7 +50,7 @@ const ApiKeyForm = ({ onCancel, onSubmit }: ApiKeyFormProps) => {
         </div>
 
         <div className="flex justify-end space-x-2">
-          <Button 
+          <Button
             type="button"
             variant="outline"
             className="border-gray-300 text-gray-700"
@@ -58,7 +58,7 @@ const ApiKeyForm = ({ onCancel, onSubmit }: ApiKeyFormProps) => {
           >
             취소
           </Button>
-          <Button 
+          <Button
             type="submit"
             className="bg-[#f2b94c] text-white hover:bg-[#e0a93a]"
           >
@@ -70,4 +70,4 @@ const ApiKeyForm = ({ onCancel, onSubmit }: ApiKeyFormProps) => {
   );
 };
 
-export default ApiKeyForm; 
+export default ApiKeyForm;
