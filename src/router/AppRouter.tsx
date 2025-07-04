@@ -5,12 +5,16 @@ import InfoPage from "@pages/info/InfoPage.tsx";
 import InvestmentNotice from "@pages/info/investment/InvestmentNotice.tsx";
 import ApiKeyPage from "@pages/info/ApiKey/ApiKeyPage.tsx";
 import QuantPage from "@pages/quant/QuantPage.tsx";
+import GoogleLoginPage from "@pages/login/GoogleLoginPage.tsx";
+import GoogleAuthRedirect from "@pages/login/components/GoogleAuthRedirect.tsx";
 
 const AppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<GoogleLoginPage />} />
+        <Route path="/login/auth/google" element={<GoogleAuthRedirect />} />
         <Route path="/trade" element={<TradingPage />} />
         <Route path="/quant" element={<QuantPage />} />
         <Route path="/trade/info" element={<InfoPage />}>
