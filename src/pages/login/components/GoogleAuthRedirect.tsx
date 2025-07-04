@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const GoogleAuthRedirect = () => {
   const [error, setError] = useState<string | null>(null);
@@ -9,7 +10,6 @@ const GoogleAuthRedirect = () => {
   useEffect(() => {
     const handleGoogleRedirect = async () => {
       try {
-        // URL에서 인증 코드 추출
         const urlParams = new URLSearchParams(window.location.search);
         const authorizationCode = urlParams.get("code");
 
@@ -19,29 +19,28 @@ const GoogleAuthRedirect = () => {
           return;
         }
 
-        // 백엔드 서버에 인증 코드 전송
-        const response = await fetch("YOUR_BACKEND_API_URL/auth/google", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ code: authorizationCode }),
-        });
+        const response = await axios.post(
+          "YOUR_BACKEND_API_URL/auth/google", 
+          { code: authorizationCode },
+          {
+            headers: {
+              "Content-Type": "application/json",
+            }
+          }
+        );
 
-        if (!response.ok) {
-          throw new Error("로그인 처리 중 오류가 발생했습니다.");
-        }
-
-        const data = await response.json();
+        const data = response.data;
         
-        // 토큰 저장
         localStorage.setItem("authToken", data.token);
         
-        // 로그인 성공 후 홈 페이지로 리디렉션
         navigate("/home");
       } catch (err) {
         console.error("Google 로그인 오류:", err);
-        setError(err instanceof Error ? err.message : "알 수 없는 오류가 발생했습니다.");
+        if (axios.isAxiosError(err)) {
+          setError(err.response?.data?.message || err.message || "API 요청 중 오류가 발생했습니다.");
+        } else {
+          setError(err instanceof Error ? err.message : "알 수 없는 오류가 발생했습니다.");
+        }
         setIsLoading(false);
       }
     };
