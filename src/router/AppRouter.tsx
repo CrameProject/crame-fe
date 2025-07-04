@@ -9,6 +9,7 @@ import GoogleLoginPage from "@pages/login/GoogleLoginPage.tsx";
 import GoogleAuthRedirect from "@pages/login/components/GoogleAuthRedirect.tsx";
 import Header from "@/components/common/Header";
 import AITradingPage from "@pages/ai-trade/aiTradingPage.tsx";
+import Header from "@/components/common/Header";
 
 const AppRouter = () => {
   return (
