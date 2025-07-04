@@ -6,7 +6,7 @@ type Props = {
 };
 
 const SelectCard = ({ strategy }: Props) => (
-  <div className="rounded-xl border border-neutral-300 bg-white p-6">
+  <div className="rounded-xl border border-neutral-300 bg-white p-6 transition-colors duration-200 hover:border-gold-300 cursor-pointer">
     <div className="mb-4 flex items-start justify-between border-neutral-200 bg-bg-1 p-3 font-sans">
       <div>
         <h3 className="mb-2 text-T2-SB text-text-default">{strategy.name}</h3>
