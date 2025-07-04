@@ -1,7 +1,13 @@
 import { Button } from "@/components/ui/button";
 import LogoIcon from "@/assets/icons/Logo.svg?react";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    navigate("/login");
+  }
   return (
     <header className="w-full min-w-[768px] border-b border-gray-200 py-3">
       <div className="mx-auto flex max-w-screen-xl items-center justify-between px-12">
@@ -33,7 +39,7 @@ const Header = () => {
           >
             회원가입
           </Button>
-          <Button className="h-9 bg-[#F4B224] px-6 text-white hover:bg-[#d9991b]">로그인</Button>
+          <Button className="h-9 bg-[#F4B224] px-6 text-white hover:bg-[#d9991b]" onClick={handleLogin}>로그인</Button>
         </div>
       </div>
     </header>
