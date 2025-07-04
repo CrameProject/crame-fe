@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import GoogleIcon from "@/assets/icons/google.svg";
+import GoogleIcon from "@/assets/icons/googleIcon.svg";
 
 const GoogleButton = () => {
     return (
