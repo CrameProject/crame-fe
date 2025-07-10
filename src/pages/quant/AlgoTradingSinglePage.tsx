@@ -58,22 +58,6 @@ const strategies = [
 const AlgoTradingSinglePage = () => {
   return (
     <div className="min-h-screen bg-[#F5F5F7] pb-16">
-      {/* 네비게이션 */}
-      <nav className="flex items-center justify-between px-8 py-4 bg-[#F5F5F7]">
-        <div className="flex items-center">
-          <div className="w-[88px] h-[57px] bg-[#E0E0E0] rounded-md flex items-center justify-center mr-8 text-xs text-gray-400 border border-[#E0E0E0]">88 × 57</div>
-          <ul className="flex space-x-8 text-[#A88B2D] font-semibold text-lg">
-            <li>차트</li>
-            <li>지표</li>
-            <li>퀀트</li>
-            <li>서비스 소개</li>
-          </ul>
-        </div>
-        <div className="flex space-x-4">
-          <button className="px-6 py-2 rounded-md bg-[#E0E0E0] text-[#A88B2D] font-bold">로그인</button>
-          <button className="px-6 py-2 rounded-md bg-[#A88B2D] text-white font-bold">회원가입</button>
-        </div>
-      </nav>
 
       {/* 타이틀 */}
       <h1 className="text-3xl font-bold text-center text-[#222] mt-8 mb-12">알고리즘 트레이딩</h1>
