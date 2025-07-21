@@ -9,12 +9,11 @@ import GoogleLoginPage from "@pages/login/GoogleLoginPage.tsx";
 import GoogleAuthRedirect from "@pages/login/components/GoogleAuthRedirect.tsx";
 import Header from "@/components/common/Header";
 import AITradingPage from "@pages/ai-trade/aiTradingPage.tsx";
-import Header from "@/components/common/Header";
 
 const AppRouter = () => {
   return (
     <BrowserRouter>
-      <div className="flex flex-col min-h-screen">
+      <div className="flex min-h-screen flex-col">
         <Header />
         <main className="flex-grow">
           <Routes>
@@ -23,6 +22,7 @@ const AppRouter = () => {
             <Route path="/login/auth/google" element={<GoogleAuthRedirect />} />
             <Route path="/trade" element={<TradingPage />} />
             <Route path="/quant" element={<QuantPage />} />
+            <Route path="/ai-trade" element={<AITradingPage />} />
             <Route path="/trade/info" element={<InfoPage />}>
               <Route index element={<Navigate to="/trade/info/notice" replace />} />
               <Route path="notice" element={<InvestmentNotice />} />
@@ -31,17 +31,6 @@ const AppRouter = () => {
           </Routes>
         </main>
       </div>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/trade" element={<TradingPage />} />
-        <Route path="/quant" element={<QuantPage />} />
-        <Route path="/ai-trade" element={<AITradingPage />} />
-        <Route path="/trade/info" element={<InfoPage />}>
-          <Route index element={<Navigate to="/trade/info/notice" replace />} />
-          <Route path="notice" element={<InvestmentNotice />} />
-          <Route path="api" element={<ApiKeyPage />} />
-        </Route>
-      </Routes>
     </BrowserRouter>
   );
 };
