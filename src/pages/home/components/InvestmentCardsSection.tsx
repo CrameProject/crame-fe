@@ -1,8 +1,7 @@
-import React from 'react';
-import InvestmentCard from './InvestmentCard';
+
+import InvestmentCard from './InvestmentCard.tsx';
 
 interface InvestmentCardData {
-  number: string;
   product: string;
   return: string;
   period: string;
@@ -16,7 +15,6 @@ interface InvestmentCardData {
 const InvestmentCardsSection = () => {
   const firstRowCards: InvestmentCardData[] = [
     {
-      number: "1",
       product: "iQon라지캡 주식형",
       return: "7.27%",
       period: "3개월",
@@ -27,7 +25,6 @@ const InvestmentCardsSection = () => {
       discount: "50%"
     },
     {
-      number: "2",
       product: "iQon미드캡 주식형",
       return: "6.85%",
       period: "3개월", 
@@ -38,7 +35,6 @@ const InvestmentCardsSection = () => {
       discount: "40%"
     },
     {
-      number: "3",
       product: "iQon스몰캡 주식형",
       return: "8.12%",
       period: "3개월",
@@ -52,7 +48,6 @@ const InvestmentCardsSection = () => {
 
   const secondRowCards: InvestmentCardData[] = [
     {
-      number: "4",
       product: "iQon테크 주식형",
       return: "9.45%",
       period: "3개월",
@@ -63,7 +58,6 @@ const InvestmentCardsSection = () => {
       discount: "55%"
     },
     {
-      number: "5",
       product: "iQon바이오 주식형",
       return: "7.89%",
       period: "3개월",
@@ -94,7 +88,7 @@ const InvestmentCardsSection = () => {
             </div>
             
             {/* 두 번째 줄 */}
-            <div className="flex animate-scroll space-x-8">
+            <div className="flex animate-scroll-reverse space-x-8">
               {secondRowCards.map((card, index) => (
                 <InvestmentCard key={`second-row-${index}`} {...card} />
               ))}

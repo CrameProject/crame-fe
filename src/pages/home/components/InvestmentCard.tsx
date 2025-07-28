@@ -1,7 +1,6 @@
 import React from 'react';
 
 interface InvestmentCardProps {
-  number: string;
   product: string;
   return: string;
   period: string;
@@ -13,7 +12,6 @@ interface InvestmentCardProps {
 }
 
 const InvestmentCard: React.FC<InvestmentCardProps> = ({
-  number,
   product,
   return: returnValue,
   period,
@@ -24,37 +22,45 @@ const InvestmentCard: React.FC<InvestmentCardProps> = ({
   discount
 }) => {
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6 space-y-4 min-w-[320px] flex-shrink-0 h-64">
-      <div className="flex items-center justify-between">
-        <div className="bg-gold-100 text-gold-600 px-3 py-1 rounded-full text-sm font-semibold">
-          {number} {product}
+    <div className="bg-white rounded-xl shadow-sm p-6 min-w-[500px] flex-shrink-0 h-56">
+      <div className="flex flex-col h-full">
+        {/* 상단 섹션 */}
+        <div className="flex items-start justify-between mb-4">
+          <div className="flex flex-col items-start">
+            <div className="bg-gold-300 text-white px-3 py-1 rounded-full text-xs font-semibold mb-2">
+              어쩌고
+            </div>
+            <div className="text-xs text-text-sub mb-1">인텔리퀸트</div>
+            <div className="text-lg font-bold text-text-default">{product}</div>
+          </div>
+          <div className="text-right">
+            <div className="text-2xl font-bold text-gold-300">{returnValue}</div>
+            <div className="text-xs text-text-sub">({period})</div>
+          </div>
         </div>
-      </div>
-      
-      <div className="text-center space-y-2">
-        <div className="text-3xl font-bold text-gold-300">{returnValue}</div>
-        <div className="text-sm text-text-sub">({period})</div>
-      </div>
-      
-      <div className="space-y-2 text-sm">
-        <div className="flex justify-between">
-          <span className="text-text-sub">누적수익률</span>
-          <span className="font-semibold">{cumulative}</span>
+        
+        {/* 중간 섹션 - 성과 지표를 가로로 배치 */}
+        <div className="flex-1 flex items-center justify-between mb-4">
+          <div className="flex items-center space-x-4">
+            <div className="text-center">
+              <div className="text-sm text-text-default">누적수익률</div>
+              <div className="text-sm font-semibold text-text-default">{cumulative}</div>
+            </div>
+            <div className="text-center">
+              <div className="text-sm text-text-default">연평균수익률</div>
+              <div className="text-sm font-semibold text-text-default">{annual}</div>
+            </div>
+            <div className="text-center">
+              <div className="text-sm text-text-default">최대손실폭</div>
+              <div className="text-sm font-semibold text-text-default">{maxLoss}</div>
+            </div>
+          </div>
         </div>
-        <div className="flex justify-between">
-          <span className="text-text-sub">연평균수익률</span>
-          <span className="font-semibold">{annual}</span>
-        </div>
-        <div className="flex justify-between">
-          <span className="text-text-sub">최대손실폭</span>
-          <span className="font-semibold">{maxLoss}</span>
-        </div>
-      </div>
-      
-      <div className="border-t pt-4 mt-auto">
-        <div className="flex justify-between items-center">
-          <span className="text-system-error font-semibold">{discount} ▼</span>
-          <span className="text-lg font-bold">{price}</span>
+        
+        {/* 하단 섹션 */}
+        <div className="flex justify-end items-center">
+          <span className="text-system-error font-semibold text-sm mr-2">{discount} ▼</span>
+          <span className="text-lg font-bold text-text-default">{price}</span>
         </div>
       </div>
     </div>
