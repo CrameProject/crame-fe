@@ -34,18 +34,15 @@ const WhyCrameSection = () => {
         </div>
         
         <div className="relative">
-          {/* 황금색 연결선 - 그라데이션 효과 */}
           <div className="absolute top-7 left-1/2 transform -translate-x-1/2 w-[1000px] h-0.5 bg-gradient-to-r from-gold-300 via-gold-300 to-transparent"></div>
           
           <div className="flex justify-center items-start space-x-32 mb-16">
             {features.map((item, index) => (
               <div key={index} className="flex flex-col items-center relative">
-                {/* 황금색 사각형 - 선을 관통하도록 배치 */}
                 <div className="w-14 h-14 bg-gold-300 rounded-sm flex items-center justify-center relative z-10 shadow-sm mb-6">
                   <span className="text-white text-xl font-bold">{item.number}</span>
                 </div>
                 
-                {/* 텍스트를 사각형 바로 아래에 배치 */}
                 <div className="text-center space-y-3">
                   <h3 className="text-2xl font-bold text-text-default">{item.title}</h3>
                   <p className="text-text-sub text-base leading-relaxed max-w-xs">{item.description}</p>

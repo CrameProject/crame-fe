@@ -24,7 +24,6 @@ const InvestmentCard: React.FC<InvestmentCardProps> = ({
   return (
     <div className="bg-white rounded-xl shadow-sm p-6 min-w-[500px] flex-shrink-0 h-56">
       <div className="flex flex-col h-full">
-        {/* 상단 섹션 */}
         <div className="flex items-start justify-between mb-4">
           <div className="flex flex-col items-start">
             <div className="bg-gold-300 text-white px-3 py-1 rounded-full text-xs font-semibold mb-2">
@@ -39,7 +38,6 @@ const InvestmentCard: React.FC<InvestmentCardProps> = ({
           </div>
         </div>
         
-        {/* 중간 섹션 - 성과 지표를 가로로 배치 */}
         <div className="flex-1 flex items-center justify-between mb-4">
           <div className="flex items-center space-x-4">
             <div className="text-center">
@@ -57,7 +55,6 @@ const InvestmentCard: React.FC<InvestmentCardProps> = ({
           </div>
         </div>
         
-        {/* 하단 섹션 */}
         <div className="flex justify-end items-center">
           <span className="text-system-error font-semibold text-sm mr-2">{discount} ▼</span>
           <span className="text-lg font-bold text-text-default">{price}</span>

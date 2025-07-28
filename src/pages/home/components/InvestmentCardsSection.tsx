@@ -73,27 +73,22 @@ const InvestmentCardsSection = () => {
     <section className="py-20 bg-bg-1 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative">
-          {/* 무한 스크롤 애니메이션 */}
           <div className="flex flex-col space-y-8">
-            {/* 첫 번째 줄 */}
             <div className="flex animate-scroll space-x-8">
               {firstRowCards.map((card, index) => (
                 <InvestmentCard key={index} {...card} />
               ))}
               
-              {/* 첫 번째 줄 복제 */}
               {firstRowCards.map((card, index) => (
                 <InvestmentCard key={`duplicate-${index}`} {...card} />
               ))}
             </div>
             
-            {/* 두 번째 줄 */}
             <div className="flex animate-scroll-reverse space-x-8">
               {secondRowCards.map((card, index) => (
                 <InvestmentCard key={`second-row-${index}`} {...card} />
               ))}
               
-              {/* 두 번째 줄 복제 */}
               {secondRowCards.map((card, index) => (
                 <InvestmentCard key={`second-row-duplicate-${index}`} {...card} />
               ))}

@@ -1,20 +1,15 @@
 const HeroSection = () => {
     return (
       <section className="relative h-screen flex items-center justify-start px-32">
-        {/* 배경 이미지 */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: "url('/src/assets/images/background.png')"
           }}
         >
-                      {/* 그라데이션 오버레이 제거하여 배경 이미지가 밝게 보이도록 */}
-            {/* <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/30"></div> */}
         </div>
         
-        {/* 콘텐츠 */}
         <div className="relative z-10 flex items-center w-full">
-          {/* 왼쪽 텍스트 영역 */}
           <div className="max-w-md text-left text-black">
             <h1 className="text-4xl font-bold mb-2">
               스마트한 투자의 시작
@@ -31,7 +26,6 @@ const HeroSection = () => {
             </button>
           </div>
           
-          {/* 오른쪽 그래프 영역 (빈 공간) */}
           <div className="flex-1"></div>
         </div>
       </section>
