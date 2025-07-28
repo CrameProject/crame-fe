@@ -9,6 +9,7 @@ import GoogleLoginPage from "@pages/login/GoogleLoginPage.tsx";
 import GoogleAuthRedirect from "@pages/login/components/GoogleAuthRedirect.tsx";
 import Header from "@/components/common/Header";
 import AITradingPage from "@pages/ai-trade/aiTradingPage.tsx";
+import SignupPage from "@pages/signup/SignupPage.tsx";
 
 const AppRouter = () => {
   return (
@@ -20,6 +21,7 @@ const AppRouter = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<GoogleLoginPage />} />
             <Route path="/login/auth/google" element={<GoogleAuthRedirect />} />
+            <Route path="/signup" element={<SignupPage />} />
             <Route path="/trade" element={<TradingPage />} />
             <Route path="/quant" element={<QuantPage />} />
             <Route path="/ai-trade" element={<AITradingPage />} />
