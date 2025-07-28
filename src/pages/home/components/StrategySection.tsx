@@ -42,9 +42,7 @@ const StrategySection = () => {
           {strategies.map((strategy, index) => (
             <div 
               key={index} 
-              className={`bg-bg-1 rounded-lg p-8 text-center space-y-6 shadow-sm hover:shadow-md transition-shadow ${
-                index === 0 ? 'border-2 border-blue-500' : ''
-              }`}
+              className={`bg-bg-1 rounded-lg p-8 text-center space-y-6 shadow-sm hover:shadow-md transition-shadow`}
             >
               <div className="w-32 h-32 mx-auto">
                 <img 
