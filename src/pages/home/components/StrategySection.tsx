@@ -1,3 +1,6 @@
+import monitorImage from '../../../assets/images/monitor.png';
+import quantImage from '../../../assets/images/quant.png';
+import gearImage from '../../../assets/images/gear.png';
 
 interface StrategyItem {
   title: string;
@@ -12,19 +15,19 @@ const StrategySection = () => {
       title: "AI 실시간 분석",
       description: "최첨단 AI 기술로 시장을 실시간 분석하여 최적의 매매 기회를 포착합니다.",
       icon: "monitor",
-      imageSrc: "/src/assets/images/monitor.png"
+      imageSrc: monitorImage
     },
     {
       title: "알고리즘 퀀트",
       description: "각종 알고리즘의 조합을 통하여 더 즉각적이고 일관적인 트레이딩을 경험할 수 있습니다.",
       icon: "quant",
-      imageSrc: "/src/assets/images/quant.png"
+      imageSrc: quantImage
     },
     {
       title: "주기적 업데이트",
       description: "주기적인 업데이트를 통해 모델이 최신 경향성을 잘 파악할 수 있게 했습니다.",
       icon: "gear",
-      imageSrc: "/src/assets/images/gear.png"
+      imageSrc: gearImage
     }
   ];
 

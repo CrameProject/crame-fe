@@ -1,10 +1,12 @@
+import backgroundImage from '../../../assets/images/background.png';
+
 const HeroSection = () => {
     return (
       <section className="relative h-screen flex items-center justify-start px-32">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/src/assets/images/background.png')"
+            backgroundImage: `url(${backgroundImage})`
           }}
         >
         </div>
