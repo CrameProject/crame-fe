@@ -102,6 +102,20 @@ module.exports = {
           { lineHeight: "15px", letterSpacing: "-0.02em", fontWeight: "700" },
         ],
       },
+      animation: {
+        'scroll': 'scroll 30s linear infinite',
+        'scroll-reverse': 'scroll-reverse 25s linear infinite',
+      },
+      keyframes: {
+        scroll: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+        'scroll-reverse': {
+          '0%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+      },
     },
   },
   plugins: [],

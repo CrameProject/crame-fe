@@ -3,7 +3,7 @@ name: Feature request
 about: 기능 추가 이슈 템플릿
 title: "[FEAT]"
 labels: feat
-assignees: cywin1018, gyeongbibin, immaemi
+assignees: 
 
 ---
 
