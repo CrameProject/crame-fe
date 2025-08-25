@@ -17,7 +17,7 @@ const Header = () => {
       <div className="mx-auto flex max-w-screen-xl items-center justify-between px-12">
         <div className="flex items-center gap-8">
           <div className="text-xl font-bold text-blue-600">
-            <LogoIcon className="h-8" />
+            <LogoIcon className="h-8" />z
           </div>
 
           <nav className="flex items-center gap-6 px-16 font-medium text-gray-700">

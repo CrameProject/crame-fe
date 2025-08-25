@@ -18,6 +18,7 @@ export type StrategyCardProps = {
   }[];
   buttonText?: string;
   isDisabled?: boolean;
+  onClick?: () => void;
 };
 
 const StrategyCard = ({
@@ -31,6 +32,7 @@ const StrategyCard = ({
   strategies,
   buttonText = "프리미엄 구독하기",
   isDisabled = false,
+  onClick,
 }: StrategyCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -64,6 +66,7 @@ const StrategyCard = ({
           <Button
             className={`w-full h-[60px] rounded-full bg-gold-300 text-white text-center text-B1-M font-bold hover:bg-gold-400 transition-colors ${isDisabled ? 'opacity-70 cursor-not-allowed' : ''}`}
             disabled={isDisabled}
+            onClick={onClick}
           >
             {buttonText}
           </Button>

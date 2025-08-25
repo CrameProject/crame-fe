@@ -5,6 +5,7 @@ import InfoPage from "@pages/info/InfoPage.tsx";
 import InvestmentNotice from "@pages/info/investment/InvestmentNotice.tsx";
 import ApiKeyPage from "@pages/info/ApiKey/ApiKeyPage.tsx";
 import QuantPage from "@pages/quant/QuantPage.tsx";
+import AlgoTradingSinglePage from "@pages/quant/AlgoTradingSinglePage";
 import GoogleLoginPage from "@pages/login/GoogleLoginPage.tsx";
 import GoogleAuthRedirect from "@pages/login/components/GoogleAuthRedirect.tsx";
 import Header from "@/components/common/Header";
@@ -26,6 +27,7 @@ const AppRouter = () => {
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/trade" element={<TradingPage />} />
             <Route path="/quant" element={<QuantPage />} />
+            <Route path="/quant/algo" element={<AlgoTradingSinglePage />} />
             <Route path="/ai-trade" element={<AITradingPage />} />
             <Route>
               <Route path="/portfolio" element={<PortfolioPage />} />
