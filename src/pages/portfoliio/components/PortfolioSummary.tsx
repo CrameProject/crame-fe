@@ -23,7 +23,7 @@ const PortfolioSummary = () => {
           </div>
         </div>
 
-        <div className="text-left">
+        <div className="text-left ml-3">
           <button
             onClick={() => setIsExpanded(!isExpanded)}
             className="text-B2-M text-gold-500 flex items-center gap-1"
@@ -37,7 +37,7 @@ const PortfolioSummary = () => {
           <div className="flex justify-start gap-2 pb-2 pt-2">
             <button
               onClick={() => setSelectedFilter("stock")}
-              className={`border text-B2-M px-3 py-1 rounded-full ${
+              className={`bordr text-B2-M px-3 py-1 rounded-full ${
                 selectedFilter === "stock"
                   ? "bg-gold-300 text-white"
                   : "border-neutral-200"
