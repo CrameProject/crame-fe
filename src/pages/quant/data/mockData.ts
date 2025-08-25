@@ -64,7 +64,7 @@ export const tradingSystems: TradingSystem[] = [
         percentage: 72,
       }
     ],
-    buttonText: '현재 나의 플랜',
+    buttonText: '프리미엄 구독하기',
     isDisabled: false,
   }
 ]; 

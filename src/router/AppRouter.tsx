@@ -13,6 +13,7 @@ import AITradingPage from "@pages/ai-trade/aiTradingPage.tsx";
 import SignupPage from "@pages/signup/SignupPage.tsx";
 import PortfolioPage from "@pages/portfoliio/PortfolioPage.tsx";
 import Account from "@pages/account/AccountPage.tsx";
+import PortfolioApiKeyPage from "@/pages/portfoliio/ApiKeyPage";
 
 const AppRouter = () => {
   return (
@@ -32,6 +33,7 @@ const AppRouter = () => {
             <Route>
               <Route path="/portfolio" element={<PortfolioPage />} />
               <Route path="/portfolio/account" element={<Account />} />
+              <Route path="/portfolio/apikey" element={<PortfolioApiKeyPage />} />
             </Route>
             <Route path="/trade/info" element={<InfoPage />}>
               <Route index element={<Navigate to="/trade/info/notice" replace />} />

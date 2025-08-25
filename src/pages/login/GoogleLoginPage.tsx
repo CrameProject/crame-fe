@@ -13,7 +13,7 @@ const GoogleLoginPage = () => {
     const location = useLocation();
     const state = location.state as LocationState;
     const errorMessage = state?.error;
-    
+
     const CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
     const REDIRECT_URI = "http://localhost:5173/login/auth/google";
     const SCOPE = "email profile openid";
@@ -24,9 +24,12 @@ const GoogleLoginPage = () => {
     }
 
     useEffect(() => {
-        // 이미 로그인된 사용자는 홈 페이지로 리디렉션
-        if (authData?.isAuthenticated) {
-            navigate('/home');
+        const isLocalhost = typeof window !== 'undefined' && window.location.hostname === 'localhost';
+        const enableLocalAuto = (import.meta as any)?.env?.VITE_ENABLE_LOCAL_AUTOLOGIN !== 'false';
+
+        // 로컬 자동로그인 상태에서는 로그인 페이지에서 자동 리다이렉트하지 않음
+        if (authData?.isAuthenticated && !(isLocalhost && enableLocalAuto)) {
+            navigate('/');
         }
     }, [authData, navigate]);
 
@@ -50,6 +53,14 @@ const GoogleLoginPage = () => {
             <div onClick={handleLogin}>
                 <GoogleButton />
             </div>
+            {window.location.hostname === 'localhost' && (
+              <button
+                onClick={() => navigate('/')}
+                className="mt-4 text-sm text-blue-600 underline"
+              >
+                로컬 강제 로그인(바이패스)
+              </button>
+            )}
         </div>
     )
 }
