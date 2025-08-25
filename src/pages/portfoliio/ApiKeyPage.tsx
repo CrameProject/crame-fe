@@ -43,6 +43,12 @@ const ApiKeyPage = () => {
     setOpen(false);
   };
 
+  const onDelete = (id: string) => {
+    const ok = window.confirm("해당 API Key를 삭제하시겠습니까?");
+    if (!ok) return;
+    setRows(prev => prev.filter(r => r.id !== id));
+  };
+
   return (
     <div className="min-h-screen bg-[#FBF8F2]">
       <div className="max-w-screen-xl mx-auto px-6 lg:px-12 py-10">
@@ -76,7 +82,17 @@ const ApiKeyPage = () => {
                     <td className="px-6 py-3">{r.publicKey}</td>
                     <td className="px-6 py-3">{r.secretKey}</td>
                     <td className="px-6 py-3">{r.createdAt}</td>
-                    <td className="px-6 py-3">{r.manager}</td>
+                    <td className="px-6 py-3">
+                      <div className="flex items-center gap-3">
+                        <span>{r.manager}</span>
+                        <button
+                          onClick={() => onDelete(r.id)}
+                          className="rounded-md border border-[#E0D7C8] px-3 py-1 text-xs text-[#A35C5C] hover:bg-[#FFF4F4]"
+                        >
+                          삭제
+                        </button>
+                      </div>
+                    </td>
                   </tr>
                 ))}
               </tbody>
