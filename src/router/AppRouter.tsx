@@ -10,6 +10,8 @@ import GoogleAuthRedirect from "@pages/login/components/GoogleAuthRedirect.tsx";
 import Header from "@/components/common/Header";
 import AITradingPage from "@pages/ai-trade/aiTradingPage.tsx";
 import SignupPage from "@pages/signup/SignupPage.tsx";
+import PortfolioPage from "@pages/portfoliio/PortfolioPage.tsx";
+import Account from "@pages/account/AccountPage.tsx";
 
 const AppRouter = () => {
   return (
@@ -25,6 +27,10 @@ const AppRouter = () => {
             <Route path="/trade" element={<TradingPage />} />
             <Route path="/quant" element={<QuantPage />} />
             <Route path="/ai-trade" element={<AITradingPage />} />
+            <Route>
+              <Route path="/portfolio" element={<PortfolioPage />} />
+              <Route path="/portfolio/account" element={<Account />} />
+            </Route>
             <Route path="/trade/info" element={<InfoPage />}>
               <Route index element={<Navigate to="/trade/info/notice" replace />} />
               <Route path="notice" element={<InvestmentNotice />} />
