@@ -26,7 +26,7 @@ const QuantPage = () => {
                 system.id === "algorithm-trading"
                   ? () => navigate("/quant/algo")
                   : system.id === "ai-trading"
-                  ? undefined
+                  ? () => navigate("/ai-trade")
                   : undefined
               }
             />

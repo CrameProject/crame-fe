@@ -48,7 +48,7 @@ const StrategyCard = ({
           <h3 className="text-T2-SB text-text-default">{title}</h3>
           {subtitle && <span className="ml-2 text-B2-M text-gold-300">{subtitle}</span>}
         </div>
-        <p className="text-B2-M text-text-sub">간단설명간단설 명간단설명간 간단설 명 간단설명간간 설명 간 담설</p>
+        <p className="text-B2-M text-text-sub">트레이딩 전략 소개</p>
         <br/>
       </div>
 
