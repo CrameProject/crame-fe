@@ -24,9 +24,8 @@ const GoogleLoginPage = () => {
     }
 
     useEffect(() => {
-        // 이미 로그인된 사용자는 홈 페이지로 리디렉션
         if (authData?.isAuthenticated) {
-            navigate('/home');
+            navigate('/');
         }
     }, [authData, navigate]);
 
@@ -50,6 +49,14 @@ const GoogleLoginPage = () => {
             <div onClick={handleLogin}>
                 <GoogleButton />
             </div>
+            {window.location.hostname === 'localhost' && (
+              <button
+                onClick={() => navigate('/')}
+                className="mt-4 text-sm text-blue-600 underline"
+              >
+                로컬 강제 로그인(바이패스)
+              </button>
+            )}
         </div>
     )
 }
