@@ -1,7 +1,7 @@
 import React from "react";
-import PortfolioHeader from "@/pages/portfoliio/components/PortfolioHeader";
-import PortfolioSummary from "@/pages/portfoliio/components/PortfolioSummary";
-import TransactionHistory from "@/pages/portfoliio/components/Transaction/TransactionHistory";
+import PortfolioHeader from "@/pages/portfolio/components/PortfolioHeader";
+import PortfolioSummary from "@/pages/portfolio/components/portfolio/PortfolioSummary";
+import TransactionHistory from "@/pages/portfolio/components/transaction/TransactionHistory";
 
 const PortfolioPage = () => {
   return (

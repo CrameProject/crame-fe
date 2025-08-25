@@ -10,7 +10,7 @@ import GoogleAuthRedirect from "@pages/login/components/GoogleAuthRedirect.tsx";
 import Header from "@/components/common/Header";
 import AITradingPage from "@pages/ai-trade/aiTradingPage.tsx";
 import SignupPage from "@pages/signup/SignupPage.tsx";
-import PortfolioPage from "@pages/portfoliio/PortfolioPage.tsx";
+import PortfolioPage from "@/pages/portfolio/PortfolioPage";
 import Account from "@pages/account/AccountPage.tsx";
 
 const AppRouter = () => {

@@ -1,5 +1,5 @@
 import React from "react";
-import PortfolioHeader from "@/pages/portfoliio/components/PortfolioHeader";
+import PortfolioHeader from "@/pages/portfolio/components/PortfolioHeader";
 
 const PortfolioPage = () => {
     return (
