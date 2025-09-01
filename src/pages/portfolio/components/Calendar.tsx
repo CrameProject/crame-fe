@@ -60,7 +60,7 @@ export default function DateRangeCalendarPopup({
   const month = viewDate.getMonth();
   const daysInMonth = getDaysInMonth(year, month);
   const startDay = getFirstDayOfMonth(year, month);
-
+  
   const cells = useMemo(() => {
     const blanks = Array.from({ length: startDay }).map((_, i) => (
       <div key={`blank-${i}`} className="aspect-square" />
@@ -120,7 +120,7 @@ export default function DateRangeCalendarPopup({
       {/* 요일 */}
       <div className="grid grid-cols-7 px-3 pt-2 text-center text-xs font-semibold text-gray-600">
         {dayLabels.map((d, i) => (
-          <div key={d} className={cn("py-2", i === 0 && "text-[#FF6464]")}>
+          <div key={d} className={cn("py-2", i === 0 && "text-neutral-400")}>
             {d}
           </div>
         ))}
@@ -135,21 +135,30 @@ export default function DateRangeCalendarPopup({
           const selectedEnd = isSameDay(d, endDate);
           const inRange = startDate && endDate ? isWithin(d, startDate, endDate) : false;
 
+          const isStart = selectedStart;
+          const isEnd = selectedEnd;
           return (
             <button
               key={d.toISOString()}
               onClick={() => handlePick(d)}
               className={cn(
-                "relative aspect-square p-2 text-left rounded-lg hover:bg-neutral-50"
+                "relative aspect-square p-2 text-left rounded-lg"
               )}
-            >
+            > 
               {/* 범위 하이라이트 */}
-              {inRange && (
-                <span className="pointer-events-none absolute inset-y-1 left-1 right-1 rounded-md bg-yellow-50" />
-              )}
+                {(inRange || isStart || isEnd) && (
+                <span
+                    className={cn(
+                    "pointer-events-none absolute inset-y-1",
+                    isStart && "left-1 right-0 rounded-l-full bg-gold-100",
+                    isEnd && "left-0 right-1 rounded-r-full bg-gold-100",
+                    inRange && "left-0 right-0 bg-gold-100"
+                    )}
+                />
+                )}
               <span
                 className={cn(
-                  "relative inline-flex h-7 w-7 items-center justify-center rounded-full text-base font-semibold",
+                  "relative inline-flex h-7 w-7 items-center justify-center rounded-full text-base font-normal",
                   selectedStart || selectedEnd ? "bg-gold-300 text-white" : ""
                 )}
               >
@@ -159,6 +168,7 @@ export default function DateRangeCalendarPopup({
           );
         })}
       </div>
+
 
       {/* 액션 */}
       <div className="flex items-center justify-between gap-2 border-t border-gray-100 px-4 py-2">
