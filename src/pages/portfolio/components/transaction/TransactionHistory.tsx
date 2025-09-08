@@ -42,7 +42,7 @@ const mockTx: Transaction[] = [
     },
     {
         id: "T-2025-01-01-003",
-        date: "2025-01-01",
+        date: "2025-09-02",
         time: "00:24:01",
         category: "AI 딥러닝 트레이딩",
         division: "시장가",
@@ -54,7 +54,7 @@ const mockTx: Transaction[] = [
     },
     {
         id: "T-2025-01-01-004",
-        date: "2025-01-01",
+        date: "2025-09-16",
         time: "00:00:8",
         category: "AI 딥러닝 트레이딩",
         division: "시장가",
@@ -185,7 +185,7 @@ export default function TransactionHistory() {
                 >
                   기간별
                 </button>
-                
+
                 <Calendar
                       open={calendarOpen}
                       onClose={() => setCalendarOpen(false)}
