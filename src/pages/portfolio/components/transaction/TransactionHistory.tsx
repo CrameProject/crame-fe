@@ -3,6 +3,8 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 import TransactionTable from "./TransactionTable";
 import TransactionFilters from "./TransactionFilters";
+import Calendar from "../Calendar";
+
 import {
   Transaction,
   SortKey,
@@ -40,7 +42,7 @@ const mockTx: Transaction[] = [
     },
     {
         id: "T-2025-01-01-003",
-        date: "2025-01-01",
+        date: "2025-09-02",
         time: "00:24:01",
         category: "AI 딥러닝 트레이딩",
         division: "시장가",
@@ -52,7 +54,7 @@ const mockTx: Transaction[] = [
     },
     {
         id: "T-2025-01-01-004",
-        date: "2025-01-01",
+        date: "2025-09-16",
         time: "00:00:8",
         category: "AI 딥러닝 트레이딩",
         division: "시장가",
@@ -104,6 +106,13 @@ export default function TransactionHistory() {
       });
       return arr;
   }, [filtered, sortKey, sortDir]);
+
+    // 기간 팝업 & 선택 기간
+    const [calendarOpen, setCalendarOpen] = useState(false);
+    const [pickedRange, setPickedRange] = useState<{
+      start: Date;
+      end: Date;
+    } | null>(null);
 
   const total = sorted.length;
   const paged = sorted.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
@@ -160,18 +169,35 @@ export default function TransactionHistory() {
                 onTopFilterClick={() => handleTopFilterChange("stock")}
                 selectedFilter={selectedFilter}
               />
-              <button
-                onClick={() => handleTopFilterChange("period")}
-                className={cn(
-                  "border text-sm px-3 py-1 rounded-full",
-                  selectedFilter === "period"
-                    ? "bg-gold-300 text-white"
-                    : "border-neutral-200"
-                )}
-              >
-                기간별
-              </button>
-            </div>
+              
+              <div className="relative">
+                <button
+                  onClick={() => {
+                    handleTopFilterChange("period");
+                    setCalendarOpen(true);
+                  }}
+                  className={cn(
+                    "border text-sm px-3 py-1 rounded-full",
+                    selectedFilter === "period"
+                      ? "bg-gold-300 text-white"
+                      : "border-neutral-200"
+                  )}
+                >
+                  기간별
+                </button>
+
+                <Calendar
+                      open={calendarOpen}
+                      onClose={() => setCalendarOpen(false)}
+                      onApply={(range) => {
+                          setPickedRange(range ?? null);
+                          if (range) setCalendarOpen(false);  
+                      }}
+                      className="left-30 top-full"
+                />
+                </div>
+              </div>
+
             <TransactionTable
               data={paged}
               sortKey={sortKey}
