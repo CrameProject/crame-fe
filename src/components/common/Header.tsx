@@ -24,7 +24,7 @@ const Header = () => {
             <a href="/" className="transition hover:text-gold-300">
               차트
             </a>
-            <a href="/" className="transition hover:text-gold-300">
+            <a href="/indicator" className="transition hover:text-gold-300">
               지표
             </a>
             <a href="/quant" className="transition hover:text-gold-300">
