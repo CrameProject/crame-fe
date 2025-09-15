@@ -65,6 +65,6 @@ export const tradingSystems: TradingSystem[] = [
       }
     ],
     buttonText: '현재 나의 플랜',
-    isDisabled: true,
+    isDisabled: false,
   }
 ]; 

@@ -5,11 +5,17 @@ import InfoPage from "@pages/info/InfoPage.tsx";
 import InvestmentNotice from "@pages/info/investment/InvestmentNotice.tsx";
 import ApiKeyPage from "@pages/info/ApiKey/ApiKeyPage.tsx";
 import QuantPage from "@pages/quant/QuantPage.tsx";
+import AlgoTradingSinglePage from "@pages/quant/AlgoTradingSinglePage";
 import GoogleLoginPage from "@pages/login/GoogleLoginPage.tsx";
 import GoogleAuthRedirect from "@pages/login/components/GoogleAuthRedirect.tsx";
 import Header from "@/components/common/Header";
 import AITradingPage from "@pages/ai-trade/aiTradingPage.tsx";
 import SignupPage from "@pages/signup/SignupPage.tsx";
+import PortfolioPage from "@/pages/portfolio/PortfolioPage";
+import Account from "@pages/account/AccountPage.tsx";
+import IndicatorPage from "@pages/indicator/IndicatorPage.tsx";
+import EconomicPage from "@pages/indicator/economic/EconomicPage.tsx";
+import NewsPage from "@pages/indicator/news/NewsPage.tsx";
 
 const AppRouter = () => {
   return (
@@ -24,7 +30,17 @@ const AppRouter = () => {
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/trade" element={<TradingPage />} />
             <Route path="/quant" element={<QuantPage />} />
+            <Route path="/quant/algo" element={<AlgoTradingSinglePage />} />
             <Route path="/ai-trade" element={<AITradingPage />} />
+            <Route path="/indicator" element={<IndicatorPage />}>
+              <Route index element={<Navigate to="/indicator/economic" replace />} />
+              <Route path="economic" element={<EconomicPage />} />
+              <Route path="news" element={<NewsPage />} />
+            </Route>
+            <Route>
+              <Route path="/portfolio" element={<PortfolioPage />} />
+              <Route path="/portfolio/account" element={<Account />} />
+            </Route>
             <Route path="/trade/info" element={<InfoPage />}>
               <Route index element={<Navigate to="/trade/info/notice" replace />} />
               <Route path="notice" element={<InvestmentNotice />} />

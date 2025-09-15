@@ -1,7 +1,9 @@
 import StrategyCard from "./components/StrategyCard";
 import { tradingSystems } from "./data/mockData";
+import { useNavigate } from "react-router-dom";
 
 const QuantPage = () => {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-bg-default py-12">
       <div className="mx-auto max-w-6xl px-4">
@@ -20,6 +22,13 @@ const QuantPage = () => {
               strategies={system.strategies}
               buttonText={system.buttonText}
               isDisabled={system.isDisabled}
+              onClick={
+                system.id === "algorithm-trading"
+                  ? () => navigate("/quant/algo")
+                  : system.id === "ai-trading"
+                  ? undefined
+                  : undefined
+              }
             />
           ))}
         </div>
