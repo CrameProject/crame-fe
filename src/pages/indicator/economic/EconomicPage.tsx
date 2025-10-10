@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState, useMemo } from "react";
+import Calendar from "./components/Calendar"
 
 const EconomicPage = () => {
+  const [pickedRange, setPickedRange] = useState<{
+    start: Date;
+    end: Date;
+  } | null>(null);
+
   return (
     <div>
-      <p>경제 페이지 내용 들어올 곳</p>
+      <Calendar/>    
     </div>
   );
 };

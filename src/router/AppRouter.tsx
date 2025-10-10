@@ -13,6 +13,9 @@ import AITradingPage from "@pages/ai-trade/aiTradingPage.tsx";
 import SignupPage from "@pages/signup/SignupPage.tsx";
 import PortfolioPage from "@/pages/portfolio/PortfolioPage";
 import Account from "@pages/account/AccountPage.tsx";
+import EconomicPage from "@pages/indicator/economic/EconomicPage"; 
+import NewsPage from "@pages/indicator/news/NewsPage"; 
+import IndicatorPage from "@pages/indicator/IndicatorPage";
 
 const AppRouter = () => {
   return (
@@ -37,6 +40,11 @@ const AppRouter = () => {
               <Route index element={<Navigate to="/trade/info/notice" replace />} />
               <Route path="notice" element={<InvestmentNotice />} />
               <Route path="api" element={<ApiKeyPage />} />
+            </Route>
+            <Route path="/indicator" element={<IndicatorPage />}>
+              <Route index element={<Navigate to="/indicator/economic" replace />} />
+              <Route path="economic" element={<EconomicPage />} />
+              <Route path="news" element={<NewsPage />} />
             </Route>
           </Routes>
         </main>
